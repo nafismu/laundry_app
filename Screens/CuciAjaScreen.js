@@ -11,9 +11,14 @@ const CuciAjaScreens = () => (
             <Image 
              source={require('../assets/washing.jpg')}
              style={{width:450,height:300,borderBottomRightRadius:200,borderBottomLeftRadius:200,}}/>
+        <View style={{
+          justifyContent:'center',alignItems:'center',marginTop:-40,width:380,height:150,backgroundColor:'rgb(255, 255, 255)',borderRadius:20, borderColor:'black',borderWidth:1}}>
+
         </View>
         <View style={{ flex: 1, padding: 70}}>
-  <Card mode='elevated'>
+
+        </View>
+  {/* <Card mode='elevated'>
     <Card.Content>
       <Text variant="titleLarge">Card title</Text>
       <Text variant="bodyMedium">Card content</Text>
@@ -22,7 +27,7 @@ const CuciAjaScreens = () => (
       <Button>Cancel</Button>
       <Button>Ok</Button>
     </Card.Actions>
-  </Card>
+  </Card> */}
   </View>
   </View>
 );

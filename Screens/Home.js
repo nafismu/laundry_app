@@ -4,17 +4,25 @@ import { StyleSheet,SafeAreaView, Text, TouchableOpacity, View, ScrollView } fro
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CarouselCards from './carousel/CarouselCards';
 import Card from './Card';
+import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import {navigation} from './Card1';
 import Card1 from './Card1';
 export default function Home() {
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+  });
+  
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <ScrollView>
       <View style={styles.leftContainer}>
           <View style={{marginTop:70,flexDirection:'row',alignItems:'flex-end',justifyContent:'flex-end',gap:20, marginEnd:20}}>
-          <View style={{marginHorizontal:80,alignItems:'flex-start',justifyContent:'flex-start'}}>
-          <Text style={styles.greetingText}>Selamat Pagi,</Text>
-          <Text style={styles.nameText}>Alen</Text>
+          <View style={{marginHorizontal:70,alignItems:'flex-start',justifyContent:'flex-start'}}>
+          <Text style={[{fontSize:20,fontWeight:'bold',fontFamily:'Poppins_400Regular'}]}>Selamat Pagi,</Text>
+          <Text style={[{fontSize:20,fontFamily:'Poppins_400Regular'}]}>Alen</Text>
           </View>
           <View style={styles.icon_bell}>
               <TouchableOpacity>
@@ -54,6 +62,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     backgroundColor: "#f0eee9",
+    fontFamily: "Poppins_400Regular",
+    
   },
   leftContainer: {
     flex: 2,
@@ -70,14 +80,17 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginHorizontal: 20,
     gap: 1,
+    fontFamily: "Poppins_400Regular",
   },
   greetingText: {
-    fontSize: 20,
+    fontSize: 60,
     fontWeight: "700",
+    fontFamily: "Poppins_400Regular",
   },
   nameText: {
-    fontSize: 30,
+    fontSize: 60,
     fontWeight: "700",
+    fontFamily: "Poppins_400Regular",
   },
   promoContainer: {
     flexDirection: "row",
@@ -89,6 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "heavy",
     marginRight: 80,
+    fontFamily: "Poppins_400Regular",
   },
   promoLink: {
     fontSize: 15,
